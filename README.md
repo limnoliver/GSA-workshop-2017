@@ -5,8 +5,9 @@ This is a repository for materials related to the visualization in R workshop he
 # Before you come to the workshop...
 
 ## Install Software
-1) Download and install both R and RStudio. If you already have these installed, please update them both.
-2) Install the R packages we will use for the course. You can do so by copying and pasting the following code into the RStudio console and hitting enter. ```install.packages(c('dplyr', 'ggplot2', 'akima', 'lubridate'))```
+1) [Download] (http://cran.stat.sfu.ca/) and install the latest version of R. Please update R if you are using an R version < 3.4.1.
+2) [Download] (https://www.rstudio.com/products/rstudio/download/) and install RStudio. If you already have RStudio installed, please update to the latest version (In RStudio, navigate to Tools > Check for Updates).
+3) Install the R packages we will use for the course. You can do so by copying and pasting the following code into the RStudio console and hitting enter. ```install.packages(c('dplyr', 'ggplot2', 'akima', 'lubridate'))```
 
 ## Download Data
 
