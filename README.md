@@ -11,7 +11,6 @@ This is a repository for materials related to the visualization in R workshop he
 ## Download Data
 
 1) Download the data for the course, which is different depending on which session you are in. [Group A (beginner) session data](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/limnoliver/GSA-workshop-2017/tree/master/GroupA_beginner/data) focuses on Lake Mendota, WI temperature profiles. [Group B (intermediate) session data](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/limnoliver/GSA-workshop-2017/tree/master/GroupB_intermediate/data) includes the Lake Mendota, WI temperature profiles, a database of water quality information for many lakes across the U.S., and a shape file from Acton Lake, OH. 
-
 Click on the above links to download the data, which will download a zipped folder called "data" to your computer. Unzip this folder. 
 
 ## Create a new project in R
