@@ -16,7 +16,7 @@ In order for the workshop to run smoothly, participants should download and inst
 
 2) Click on the above links to download the data, which will download a zipped folder called "data" to your computer. Unzip this folder. 
 
-## Create a new project in R
+## Create a new project in RStudio
 1) Open RStudio and create a new R Project called "GSA_workshop_2017" (File > New Project...).  Create three folders within this project: "data", "scripts", and "figures". This can be done from the bottom right pane within RStudio under the "Files" tab (click "New Folder"). 
 
 2) Move all of the downloaded data into your "data" folder within the project directory. 
