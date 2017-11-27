@@ -23,3 +23,5 @@ In order for the workshop to run smoothly, participants should download and inst
 
 # During the workshop...
 Instructors will be "live coding" while participants follow along on their own laptops. As the workshop approaches, the instructurs will put code or vignettes in the beginner and intermediate folders on this site. Feel free to look over these materials before the workshop, but we will likely not follow them exactly and are only for reference. Following the course, the intructors will post their exact code they used in the workshop, so if you missed something or fell behind, you will have our scripts as a resource. 
+
+[Scripts from Group A (beginner)](https://github.com/limnoliver/GSA-workshop-2017/tree/master/GroupA_beginner/scripts)
