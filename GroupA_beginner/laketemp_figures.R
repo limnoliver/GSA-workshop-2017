@@ -5,9 +5,10 @@ library(dplyr)
 library(ggplot2)
 library(lubridate)
 library(rLakeAnalyzer)
+library(RColorBrewer)
 
 # read in Lake Mendota temperature profiles
-dat <- read.csv('data/mendota_temp.csv', stringsAsFactors = FALSE,
+dat <- read.csv('GroupA_beginner/data/mendota_temp.csv', stringsAsFactors = FALSE,
                 colClasses = c(sampledate = "Date"))
 
 # look at the structure of the data
@@ -17,6 +18,16 @@ tail(dat)
 
 # clean
 summary(dat) # notice there are missing values we may want to get rid of, data that clearly has issues
+hist(dat$depth)
+hist(dat$wtemp)
+
+ggplot(dat, aes(x = month, y = wtemp)) +
+  geom_point() +
+  facet_wrap(~year4)
+
+ggplot(dat, aes(x = factor(month), y = wtemp)) +
+  geom_boxplot() + 
+  facet_wrap(~year4)
 
 dat <- filter(dat, wtemp > 0)
 dat <- filter(dat, !is.na(wtemp))
@@ -26,7 +37,15 @@ dat <- filter(dat, !is.na(wtemp))
 # scatterplots
 # boxplots
 
+plot(dat$depth ~ dat$sampledate)
+
 # plot temp through time
+surface <- filter(dat, depth == 0)
+deep <- filter(dat, depth == 20)
+plot(surface$wtemp ~ surface$sampledate)
+plot(surface$wtemp ~ surface$sampledate, col = 'blue', pch = 16)
+points(deep$wtemp ~ deep$sampledate, col = 'green', pch = 16)
+?par
 
 # that's all fine, but what we really want is an 
 # interpolated plot that shows smooth depth contours
@@ -62,17 +81,3 @@ ggplot(dat.interp.df, aes(x = day, y = y, z = z, fill = z)) +
 # filter to years with most complete data
 dat.short <- filter(dat, year4 %in% c(2010:2014))
 
-# calculate thermocline using thermo.depth from package rLakeAnalyzer
-
-thermocline <- data.frame(date = NA,
-                          thermo_depth = NA)
-
-for (i in 1:length(unique(dat.short$sampledate))) {
-  temp.date <- unique(dat.short$sampledate)[i]
-  temp.dat <- filter(dat.short, sampledate == temp.date)
-  wtr <- temp.dat$wtemp
-  depths <- temp.dat$depth
-  thermo <- thermo.depth(wtr, depths, seasonal = FALSE)
-  thermocline$thermo_depth[i] <- ifelse(is.na(thermo), NA, thermo)
-  thermocline$date[i] <- temp.date
-}
